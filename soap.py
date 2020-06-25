@@ -7,9 +7,10 @@ from spyne import Application
 from spyne.protocol.soap import Soap11
 # 测试
 from spyne.server.wsgi import WsgiApplication
+from service.test_service import TestService
 
 
-applicaction = Application([],
+applicaction = Application([TestService],
                            'mytest',
                            in_protocol = Soap11(validator = 'lxml'),
                            out_protocol = Soap11())
